@@ -1,0 +1,33 @@
+<feed>
+    <id>1a46b097-b80a-4e25-8852-44f88b9179ae</id>
+    <title type="text">Green Button Usage Feed</title>
+    <entry>
+        <content>
+            <ReadingType>
+                <flowDirection>1</flowDirection>
+                <kWhPrice>0.05</kWhPrice>
+                <readingUnit>kWh</readingUnit>
+            </ReadingType>
+        </content>
+    </entry>
+    <entry>
+        <content>
+            <IntervalBlock>
+                <IntervalReading>
+                    <timePeriod>
+                        <duration>3600</duration>
+                        <start>1555484400</start>
+                    </timePeriod>
+                    <value>400</value>
+                </IntervalReading>
+                <IntervalReading>
+                    <timePeriod>
+                        <duration>3600</duration>
+                        <start>1555480800</start>
+                    </timePeriod>
+                    <value>100</value>
+                </IntervalReading>
+            </IntervalBlock>
+        </content>
+    </entry>
+</feed>

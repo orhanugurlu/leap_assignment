@@ -1,0 +1,40 @@
+@startuml
+skin rose
+hide empty members
+
+:Meter Collector Service: as Collector
+:Report User: as Report_User
+
+package "Web Layer" {
+    component MeterReadingUploadController
+    component MeterReadingReportController
+}
+
+package "Service Layer" {
+    component MeterReadingProcessorService
+    component MeterReadingReportService
+}
+
+package "Data Layer" {
+    component EnergyMeterRepository
+    component HourlyReadingRepository
+}
+
+database "Database"
+
+Collector -down-> MeterReadingUploadController
+Report_User <-down-> MeterReadingReportController
+
+MeterReadingUploadController -down-> MeterReadingProcessorService
+MeterReadingReportController <-down-> MeterReadingReportService
+
+MeterReadingProcessorService -down-> EnergyMeterRepository
+MeterReadingProcessorService -down-> HourlyReadingRepository
+MeterReadingReportService <-down- HourlyReadingRepository
+MeterReadingReportService <-down- EnergyMeterRepository
+
+EnergyMeterRepository <-down-> Database
+HourlyReadingRepository <-down-> Database
+
+
+@enduml
